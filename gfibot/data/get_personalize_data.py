@@ -18,9 +18,6 @@ from gfibot.check_tokens import check_tokens
 from gfibot.collections import *
 
 
-logger = logging.getLogger(__name__)
-
-
 def remove_and_match(lst1, lst2, value):
     index_to_remove = next((i for i, x in enumerate(lst1) if x == value), None)
     if index_to_remove is not None:
@@ -832,6 +829,7 @@ def get_issues(x):
 
 def main():
     global prodesdict, valid_tokens, sleep_token
+    logger = logging.getLogger(__name__)
     sleep_token = []
     prodesdict = {}
     parser = argparse.ArgumentParser()
